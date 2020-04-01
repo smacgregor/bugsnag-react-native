@@ -4,6 +4,8 @@ Clean react native project to demonstrate an issue with the latest version of Bu
 ```
 npx react-native init BugsnagReactNative --version 0.61.5
 yarn add bugsnag-react-native
+cd ios
+pod install
 ```
 
 Import Bugsnag.h in the AppDelegate.m:
