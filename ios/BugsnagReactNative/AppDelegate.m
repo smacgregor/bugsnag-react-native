@@ -12,18 +12,12 @@
 #import <React/RCTRootView.h>
 
 #import <BugsnagReactNative/BugsnagReactNative.h>
-#import <BugsnagReactNative/BugsnagConfiguration.h>
 #import <BugsnagReactNative/Bugsnag.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  
-  BugsnagConfiguration *configuration = [[BugsnagConfiguration alloc] init];
-  configuration.apiKey = [[NSBundle mainBundle] infoDictionary][@"BugsnagAPIKey"];
-  configuration.releaseStage = @"sandbox-w3-ios";
-  [BugsnagReactNative startWithConfiguration:configuration];
   [Bugsnag startSession];
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
